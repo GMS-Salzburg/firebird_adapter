@@ -49,10 +49,10 @@ module ActiveRecord::ConnectionAdapters::Firebird::DatabaseStatements
         else
           result
         end
-      rescue Exception => e
-        raise e.message.encode('UTF-8', @connection.encoding)
       end
     end
+    rescue Exception => e
+      raise e.message.encode('UTF-8', @connection.encoding)
   end
 
   def begin_db_transaction
