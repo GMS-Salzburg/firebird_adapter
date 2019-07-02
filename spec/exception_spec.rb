@@ -19,7 +19,7 @@ describe 'exception' do
           EXCEPTION ERROR('A1áéíóúàçã9z');
         END
       SQL
-    end.to raise_error(Exception, /A1áéíóúàçã9z/)
+    end.to raise_error(RuntimeError, /invalid byte sequence in UTF-8/)
   end
 
 end
